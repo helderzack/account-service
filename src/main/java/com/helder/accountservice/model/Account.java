@@ -10,10 +10,10 @@ public class Account {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column
+    @Column(unique = true, nullable = false)
     private String account;
 
-    @Column
+    @Column(nullable = false)
     private String agency;
 
     @Column
@@ -55,7 +55,7 @@ public class Account {
         this.accountBalance = accountBalance;
     }
 
-    public Client getclient() {
+    public Client getClient() {
         return client;
     }
 

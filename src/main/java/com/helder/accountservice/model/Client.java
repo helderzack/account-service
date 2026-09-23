@@ -11,11 +11,11 @@ public class Client {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column
+    @Column(unique = true, nullable = false)
     private String name;
 
     @OneToMany(
-            mappedBy = "account",
+            mappedBy = "client",
             cascade = CascadeType.ALL,
             orphanRemoval = true
     )
